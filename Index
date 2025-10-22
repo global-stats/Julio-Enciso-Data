@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Julio Enciso | Estadísticas</title>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --lime: #39FF14;
+      --brighton-blue: #0057B7;
+      --brighton-white: #FFFFFF;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'Roboto', sans-serif;
+      background: linear-gradient(135deg, var(--brighton-blue), #1E3A8A);
+      color: #fff;
+      min-height: 100vh;
+      padding: 20px;
+      overflow-x: hidden;
+    }
+
+    .hero {
+      position: relative;
+      height: 70vh;
+      background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), 
+                  url('https://pbs.twimg.com/media/Gh_AGnHWUAA3YoE.jpg') center/cover no-repeat;
+      border-radius: 25px;
+      margin-bottom: 30px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 40px;
+      text-align: center;
+      box-shadow: 0 15px 35px rgba(0,0,0,0.4);
+      animation: fadeIn 1.5s ease-out;
+    }
+
+    .hero h1 {
+      font-family: 'Bebas Neue', cursive;
+      font-size: 4.5rem;
+      color: var(--lime);
+      text-shadow: 3px 3px 8px rgba(0,0,0,0.8);
+      letter-spacing: 3px;
+      margin-bottom: 8px;
+    }
+
+    .hero p {
+      font-size: 1.4rem;
+      opacity: 0.95;
+      font-weight: 500;
+    }
+
+    .intro {
+      max-width: 900px;
+      margin: 0 auto 40px;
+      text-align: center;
+      font-size: 1.1rem;
+      line-height: 1.7;
+      color: rgba(255,255,255,0.9);
+      padding: 0 20px;
+    }
+
+    .intro strong {
+      color: var(--lime);
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: 0 auto;
+      background: rgba(255,255,255,0.1);
+      backdrop-filter: blur(12px);
+      border-radius: 20px;
+      padding: 35px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    }
+
+    .personal-info {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 15px;
+      margin-bottom: 30px;
+    }
+
+    .info-card {
+      background: rgba(255,255,255,0.15);
+      border-radius: 15px;
+      padding: 18px;
+      text-align: center;
+      transition: all 0.3s ease;
+    }
+
+    .info-card:hover {
+      transform: translateY(-5px);
+      background: rgba(255,255,255,0.2);
+    }
+
+    .info-label {
+      font-size: 0.9rem;
+      opacity: 0.8;
+      margin-bottom: 5px;
+    }
+
+    .info-value {
+      font-size: 1.2rem;
+      font-weight: bold;
+      color: var(--lime);
+    }
+
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 20px;
+      margin: 40px 0;
+    }
+
+    .stat-card {
+      background: rgba(255,255,255,0.15);
+      border-radius: 18px;
+      padding: 25px;
+      text-align: center;
+      transition: all 0.4s ease;
+      border: 2px solid transparent;
+    }
+
+    .stat-card:hover {
+      transform: translateY(-12px) scale(1.05);
+      border-color: var(--lime);
+      box-shadow: 0 15px 30px rgba(57,255,20,0.3);
+    }
+
+    .stat-number {
+      font-size: 3.2rem;
+      font-weight: bold;
+      color: var(--lime);
+      font-family: 'Bebas Neue', cursive;
+    }
+
+    .stat-label {
+      font-size: 1.1rem;
+      margin-top: 8px;
+      opacity: 0.9;
+    }
+
+    .titles {
+      margin-top: 50px;
+    }
+
+    .titles h2 {
+      font-family: 'Bebas Neue', cursive;
+      font-size: 2.2rem;
+      color: var(--lime);
+      margin-bottom: 20px;
+      text-align: center;
+    }
+
+    .titles-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 18px;
+    }
+
+    .title-item {
+      background: rgba(57,255,20,0.15);
+      border-radius: 15px;
+      padding: 18px;
+      text-align: center;
+      transition: all 0.3s ease;
+      border-left: 5px solid var(--lime);
+    }
+
+    .title-item:hover {
+      background: rgba(57,255,20,0.25);
+      transform: translateY(-5px);
+    }
+
+    .title-text {
+      font-weight: 600;
+      font-size: 1.05rem;
+    }
+
+    footer {
+      text-align: center;
+      margin-top: 60px;
+      font-size: 0.9rem;
+      opacity: 0.7;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (max-width: 600px) {
+      .hero { height: 55vh; padding: 25px; }
+      .hero h1 { font-size: 3rem; }
+      .hero p { font-size: 1.1rem; }
+      .intro { font-size: 1rem; }
+      .stats { grid-template-columns: 1fr; }
+      .personal-info { grid-template-columns: 1fr 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="hero">
+    <h1>JULIO ENCISO</h1>
+    <p>Estadísticas actualizadas • 22 Octubre 2025</p>
+  </div>
+
+  <!-- INTRODUCCIÓN PROFESIONAL -->
+  <div class="intro">
+    <p>
+      <strong>Julio César Enciso Espínola</strong> (23 de enero de 2004) es un futbolista paraguayo que brilla como <strong>mediocampista ofensivo</strong> en el <strong>RC Strasbourg</strong> de la Ligue 1 y la <strong>selección de Paraguay</strong>. 
+      Con solo 21 años, es un <strong>talento creativo, rápido, inteligente y habilidoso</strong>, famoso por su <strong>pegada prodigiosa desde media distancia</strong>. 
+      Debutó en Europa con Brighton en 2022, donde anotó el <strong>Gol de la Temporada Premier League 2022/23</strong> con un misil de 30 metros. Tras un préstamo en Ipswich (2 goles, 3 asistencias), llegó a Francia en septiembre de 2025 para seguir deslumbrando.
+    </p>
+  </div>
+
+  <div class="container">
+    <!-- DATOS PERSONALES -->
+    <div class="personal-info">
+      <div class="info-card">
+        <div class="info-label">Nacimiento</div>
+        <div class="info-value">23/01/2004</div>
+      </div>
+      <div class="info-card">
+        <div class="info-label">Edad</div>
+        <div class="info-value">21 años</div>
+      </div>
+      <div class="info-card">
+        <div class="info-label">Estatura</div>
+        <div class="info-value">173 cm</div>
+      </div>
+      <div class="info-card">
+        <div class="info-label">Posición</div>
+        <div class="info-value">Mediocampista ofensivo</div>
+      </div>
+    </div>
+
+    <!-- ESTADÍSTICAS: CLUBES -->
+    <div class="stats">
+      <div class="stat-card">
+        <div class="stat-number">105</div>
+        <div class="stat-label">Partidos en clubes</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-number">23</div>
+        <div class="stat-label">Goles en clubes</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-number">14</div>
+        <div class="stat-label">Asistencias en clubes</div>
+      </div>
+    </div>
+
+    <!-- ESTADÍSTICAS: SELECCIÓN -->
+    <div class="stats">
+      <div class="stat-card">
+        <div class="stat-number">27</div>
+        <div class="stat-label">Partidos con Paraguay</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-number">4</div>
+        <div class="stat-label">Goles con Paraguay</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-number">3</div>
+        <div class="stat-label">Asistencias con Paraguay</div>
+      </div>
+    </div>
+
+    <!-- TOTAL CARRERA -->
+    <div class="stats">
+      <div class="stat-card">
+        <div class="stat-number">132</div>
+        <div class="stat-label">Total partidos</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-number">27</div>
+        <div class="stat-label">Total goles</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-number">17</div>
+        <div class="stat-label">Total asistencias</div>
+      </div>
+    </div>
+
+    <!-- TÍTULOS -->
+    <div class="titles">
+      <h2>TÍTULOS GANADOS</h2>
+      <div class="titles-grid">
+        <div class="title-item">
+          <div class="title-text">Primera División – Torneo Apertura 2021<br><small>Club Libertad (Paraguay)</small></div>
+        </div>
+      </div>
+    </div>
+
+    <footer>
+      Datos verificados: Transfermarkt, FBref, Sofascore | Diseño por Grok
+    </footer>
+  </div>
+
+</body>
+</html>
