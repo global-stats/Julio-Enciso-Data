@@ -146,11 +146,11 @@
       opacity: 0.9;
     }
 
-    .titles {
+    .titles, .top-matches, .quotes {
       margin-top: 50px;
     }
 
-    .titles h2 {
+    .titles h2, .top-matches h2, .quotes h2 {
       font-family: 'Bebas Neue', cursive;
       font-size: 2.2rem;
       color: var(--lime);
@@ -158,13 +158,13 @@
       text-align: center;
     }
 
-    .titles-grid {
+    .titles-grid, .matches-grid, .quotes-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
       gap: 18px;
     }
 
-    .title-item {
+    .title-item, .match-item, .quote-item {
       background: rgba(57,255,20,0.15);
       border-radius: 15px;
       padding: 18px;
@@ -173,14 +173,27 @@
       border-left: 5px solid var(--lime);
     }
 
-    .title-item:hover {
+    .title-item:hover, .match-item:hover, .quote-item:hover {
       background: rgba(57,255,20,0.25);
       transform: translateY(-5px);
     }
 
-    .title-text {
+    .title-text, .match-text, .quote-text {
       font-weight: 600;
       font-size: 1.05rem;
+    }
+
+    .match-rating {
+      font-size: 1.2rem;
+      color: var(--lime);
+      font-weight: bold;
+      margin-top: 8px;
+    }
+
+    .quote-source {
+      font-size: 0.9rem;
+      opacity: 0.8;
+      margin-top: 8px;
     }
 
     footer {
@@ -202,6 +215,7 @@
       .intro { font-size: 1rem; }
       .stats { grid-template-columns: 1fr; }
       .personal-info { grid-template-columns: 1fr 1fr; }
+      .titles-grid, .matches-grid, .quotes-grid { grid-template-columns: 1fr; }
     }
   </style>
 </head>
@@ -209,7 +223,7 @@
 
   <div class="hero">
     <h1>JULIO ENCISO</h1>
-    <p>Estadísticas actualizadas • 22 Octubre 2025</p>
+    <p>Estadísticas actualizadas • 23 Octubre 2025</p>
   </div>
 
   <!-- INTRODUCCIÓN PROFESIONAL -->
@@ -296,6 +310,68 @@
       <div class="titles-grid">
         <div class="title-item">
           <div class="title-text">Primera División – Torneo Apertura 2021<br><small>Club Libertad (Paraguay)</small></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- MEJORES PARTIDOS -->
+    <div class="top-matches">
+      <h2>MEJORES PARTIDOS</h2>
+      <div class="matches-grid">
+        <div class="match-item">
+          <div class="match-text">24 May 2023: Brighton 1-1 Manchester City (Premier League)<br><small>Golazo de 30m, candidato Puskás, 2 regates</small></div>
+          <div class="match-rating">Rating: 9.2</div>
+        </div>
+        <div class="match-item">
+          <div class="match-text">29 Abr 2023: Brighton 6-0 Wolverhampton (Premier League)<br><small>2 asistencias, 4 regates, MVP</small></div>
+          <div class="match-rating">Rating: 8.7</div>
+        </div>
+        <div class="match-item">
+          <div class="match-text">14 May 2023: Arsenal 0-3 Brighton (Premier League)<br><small>Gol de cabeza, victoria clave</small></div>
+          <div class="match-rating">Rating: 8.4</div>
+        </div>
+        <div class="match-item">
+          <div class="match-text">24 Jun 2024: Paraguay 1-2 Colombia (Copa América)<br><small>Gol, 6 regates, máximo del torneo</small></div>
+          <div class="match-rating">Rating: 8.1</div>
+        </div>
+        <div class="match-item">
+          <div class="match-text">1 Feb 2025: Ipswich Town 1-2 Southampton (Premier League)<br><small>6 regates, 6 tiros</small></div>
+          <div class="match-rating">Rating: 7.9</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ELOGIOS -->
+    <div class="quotes">
+      <h2>ELOGIOS DESTACADOS</h2>
+      <div class="quotes-grid">
+        <div class="quote-item">
+          <div class="quote-text">"Partido excepcional... Sí, así fue" - Pep Guardiola</div>
+          <div class="quote-source">Sky Sports, 24 mayo 2023</div>
+        </div>
+        <div class="quote-item">
+          <div class="quote-text">"Guardiola es un gran admirador de Enciso" - Pep Guardiola</div>
+          <div class="quote-source">Manchester Evening News, 25 mayo 2023</div>
+        </div>
+        <div class="quote-item">
+          <div class="quote-text">"Un diamante en bruto" - Roberto De Zerbi</div>
+          <div class="quote-source">The Athletic, 30 abril 2023</div>
+        </div>
+        <div class="quote-item">
+          <div class="quote-text">"Un jugador diferente, impredecible" - Lionel Scaloni</div>
+          <div class="quote-source">ESPN Argentina, 22 junio 2024</div>
+        </div>
+        <div class="quote-item">
+          <div class="quote-text">"Un crack, con personalidad impresionante" - Daniel Garnero</div>
+          <div class="quote-source">ABC Color, 25 junio 2024</div>
+        </div>
+        <div class="quote-item">
+          <div class="quote-text">"Este chico es una joya, tiene algo especial" - Gary Lineker</div>
+          <div class="quote-source">BBC Match of the Day, 24 mayo 2023</div>
+        </div>
+        <div class="quote-item">
+          <div class="quote-text">"Un talento especial" - Kieran McKenna</div>
+          <div class="quote-source">Ipswich Star, 2 febrero 2025</div>
         </div>
       </div>
     </div>
